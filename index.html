@@ -3,21 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lì Xì Tết</title>
+    <title>Lì xì Tết</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="trees">
+        <img src="cay1.png" alt="Cây đào" class="tree left">
+        <img src="cay2.png" alt="Cây mai" class="tree right">
+    </div>
     <div class="container">
-        <h1>Chúc Mừng Năm Mới!</h1>
-        <div class="greeting">Nhập lời chúc của bạn để gửi đi:</div>
-        <input type="text" id="messageInput" placeholder="Nhập lời chúc...">
-        <button onclick="sendLixi()">Gửi Lì Xì</button>
-        <div id="messages"></div>
-        <div class="qr-code-container">
-            <img src="your_qr_code.png" alt="Your QR Code">
+        <div class="content">
+            <h1 class="greeting">Chúc mừng năm mới!</h1>
+            <p>Quét mã QR để nhận lì xì Tết</p>
+            <div class="qr-container">
+                <img src="your_qr_code.png" alt="QR Code">
+            </div>
         </div>
     </div>
-
-    <script src="script.js"></script>
+    <div class="envelopes">
+        <div class="envelope left"><img src="lixi1.png" alt="Lì xì"></div>
+        <div class="envelope left"><img src="lixi1.png" alt="Lì xì"></div>
+    
+        <div class="envelope right"><img src="lixi1.png" alt="Lì xì"></div>
+        <div class="envelope right"><img src="lixi1.png" alt="Lì xì"></div>
+    
+        <!-- Thêm nhiều hơn nếu bạn muốn -->
+    </div>
 </body>
 </html>

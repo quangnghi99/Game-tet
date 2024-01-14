@@ -1,93 +1,113 @@
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
+    font-family: 'Arial', sans-serif;
     margin: 0;
-    background-image: url('your_background_image.jpg');
-    background-size: cover;
-    background-position: center;
-    min-height: 100vh;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('your_background_image.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.trees {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.tree {
+    position: absolute;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.tree.left {
+    width: 40%;
+    left: 0;
+    transform: scaleX(-1); /* Lật ảnh để cây đào hướng về bên trái */
+}
+
+.tree.right {
+    width: 45%;
+    right: 0;
+    transform: scaleX(-1);
 }
 
 .container {
-    max-width: 600px;
-    margin: 20px;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
 }
 
-h1 {
-    color: #333;
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .greeting {
-    font-size: 20px;
-    margin-bottom: 20px;
+    color: #ff4500; /* Màu cam rực rỡ, bạn có thể thay đổi theo ý muốn */
+    font-size: 2em; /* Kích thước chữ */
+    font-weight: bold; /* Chữ đậm */
+    margin-bottom: 10px; /* Khoảng cách dưới chữ */
 }
 
-#messageInput {
-    width: calc(100% - 20px);
-    margin-bottom: 10px;
-    padding: 10px;
-    font-size: 16px;
-}
-
-button {
-    padding: 12px;
-    cursor: pointer;
-    background-color: #4caf50;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-}
-
-#messages {
-    text-align: left;
+.qr-container {
     margin-top: 20px;
-}
-
-#messages div {
-    margin-bottom: 10px;
-    padding: 10px;
-    background-color: #e0f7fa;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.qr-code-container {
-    margin-top: 20px;
-}
-
-.qr-code-container img {
-    max-width: 100%;
-    height: auto;
+    border: 2px solid #333; /* Màu của khung trắng */
+    padding: 10px; /* Khoảng cách giữa khung trắng và hình ảnh QR */
     border-radius: 8px;
-}
-.falling-lixi {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 20px;
-    color: #ff0000;
-    animation: fall 4s linear infinite;
-    background-image: url('default_lixi_image.jpg'); /* Default image */
-    width: 50px;
-    height: 50px;
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-color: #fff; /* Màu của khung trắng */
 }
 
-.playboi-lixi {
-    background-image: url('playboi_carti_image.jpg'); /* Playboi Carti image */
+.qr-container img {
+    width: 400px; /* Điều chỉnh kích thước của hình ảnh QR */
+    height: 500px;
+}
+
+.envelopes {
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.envelope {
+    width: 80px;
+    height: 100px;
+    position: relative;
+    animation: fall 3s ease-in-out infinite;
+}
+
+.envelope img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.envelope.left {
+    transform: translateX(-50vw); /* Di chuyển sang trái */
+}
+
+.envelope.right {
+    transform: translateX(50vw); /* Di chuyển sang phải */
 }
 
 @keyframes fall {
-    to {
+    0% {
+        transform: translateY(-100vh);
+    }
+    100% {
         transform: translateY(100vh);
     }
 }
